@@ -1,0 +1,163 @@
+@startuml
+actor "Client Browser" as browser
+
+control "GBZ portal" as portal
+database "GBZ nuts-node" as nuts
+
+boundary "CIBG issuer" as issuer
+boundary "Vektis issuer" as vektis
+
+control "Databron applicatie" as zkh_app
+database "Ziekenhuis nuts-node" as zkh_nuts
+
+
+group URA nummer uitgifte
+
+autonumber 2.3.0.0
+
+browser -> portal : Request VC from CIGB
+autonumber inc C
+portal -> nuts: /iam/{did}/start-oid4vci-issuance?\nredirect_url=redirect URL A = portal/done
+
+nuts -> issuer: .well-known/openid-credential-issuer
+issuer --> nuts: metadata
+
+nuts -> nuts: locate openid auth server
+
+nuts -> issuer: /.well-known/openid-configuration
+issuer --> nuts: metadata
+
+nuts -> nuts: locate /authorize endpoint
+nuts -> nuts: generate redirect URL to /authorize endpoint\n (redirect_uri=redirect URL B = /authorize)
+nuts --> portal: 302 (Location: redirect URL B )
+
+portal --> browser: 302 (Location: redirect URL B)
+autonumber inc C
+browser -> issuer: GET /authorize (redirect URL B)
+
+issuer -> browser: log in with eHerkenning
+browser --> issuer: ok (mock)
+
+issuer -> browser: bevestig VC aanmaken
+browser --> issuer: ok
+
+issuer -> issuer: maak VC aan
+
+issuer --> browser: 302 (Location nuts-node/callback?code=x)
+
+autonumber inc C
+browser -> nuts: GET /callback?code=x
+
+nuts -> issuer: /token?code=x
+issuer --> nuts: access_token
+
+nuts -> issuer: /credential (Authorization: Bearer {access_token})
+issuer --> nuts: VC
+
+nuts -> nuts: validate & store VC
+
+nuts --> browser: 302 Location: redirect URL A
+
+autonumber inc C
+browser -> portal: GET /done (redirect URL A)
+
+portal -> nuts: GET /wallet
+nuts --> portal: wallet contents
+
+portal --> browser: Wallet overview
+end
+
+group Zorgaanbieder type uitgifte
+autonumber inc B
+
+browser -> portal : Request VC from Vektis
+autonumber inc C
+portal -> nuts: /iam/{did}/start-oid4vci-issuance?\nredirect_url=redirect URL A = portal/done
+
+nuts -> vektis: .well-known/openid-credential-vektis
+vektis --> nuts: metadata
+
+nuts -> nuts: locate openid auth server
+
+nuts -> vektis: /.well-known/openid-configuration
+vektis --> nuts: metadata
+
+nuts -> nuts: locate /authorize endpoint
+nuts -> nuts: generate redirect URL to /authorize endpoint\n (redirect_uri=redirect URL B = /authorize)
+nuts --> portal: 302 (Location: redirect URL B )
+
+portal --> browser: 302 (Location: redirect URL B)
+autonumber inc C
+browser -> vektis: GET /authorize (redirect URL B)
+
+vektis -> browser: log in with eHerkenning
+browser --> vektis: ok (mock)
+
+opt Dynamic Credential Request
+vektis -> nuts: get openid-configuration
+nuts --> vektis: openid-configuration
+vektis -> vektis: create & sign RequestObject
+vektis -> browser: 302 nuts/authorize?request=RequestObject
+browser -> nuts: GET /authorize?request=RequestObject
+nuts -> nuts: unpack & validate RequestObject > presentation_definition
+nuts -> nuts: Get VCs & create vp_token based on presentation_definition
+nuts --> browser: 302 vektis/callback?vp_token=vp_token
+browser --> vektis: GET /callback?vp_token=vp_token
+vektis -> vektis: validate vp_token
+end
+
+vektis -> browser: redirect
+
+vektis -> browser: bevestig VC aanmaken
+browser --> vektis: ok
+
+vektis -> vektis: maak VC aan
+
+vektis --> browser: 302 (Location nuts-node/callback?code=x)
+
+autonumber inc C
+browser -> nuts: GET /callback?code=x
+
+nuts -> vektis: /token?code=x
+vektis --> nuts: access_token
+
+nuts -> vektis: /credential (Authorization: Bearer {access_token})
+vektis --> nuts: VC
+
+nuts -> nuts: validate & store VC
+
+nuts --> browser: 302 Location: redirect URL A
+
+autonumber inc C
+browser -> portal: GET /done (redirect URL A)
+
+portal -> nuts: GET /wallet
+nuts --> portal: wallet contents
+
+portal --> browser: Wallet overview
+
+end
+
+group Zorgaanbieder type uitgifte
+autonumber inc B
+browser -> portal: Geboortekaart opvragen
+portal -> nuts: request_access_token
+nuts -> nuts: get presentation_definition endpoint from did
+nuts -> zkh_nuts: GET .well-known/oauth-authorization-server/iam/{id}
+zkh_nuts --> nuts: OAuthAuthorizationServerMetadata
+nuts -> nuts: locate presentation_definition URL
+nuts -> zkh_nuts: GET /presentation_definition?scope=geboortezorg
+zkh_nuts --> nuts: Presentation Definition
+nuts -> nuts: Get VCs & create VPs based on presentation_definition
+nuts -> zkh_nuts: /token + VPs
+zkh_nuts --> nuts: access_token
+nuts --> portal: access_token
+portal -> zkh_app: /fhir/<Resource> (Authorization: Bearer {access_token})
+zkh_app -> zkh_nuts: /introspect + access_token
+zkh_nuts --> zkh_app: introspect result (VPs)
+zkh_app -> zkh_app: verify request context with VPs
+zkh_app --> portal: Geboortekaart
+portal -> browser: Geboortekaart
+
+end
+@enduml
