@@ -1,0 +1,106 @@
+<mxfile host="Electron" modified="2024-02-14T08:54:04.144Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="HWyvJjGi6NgtyjxOVhbh" version="23.0.2" type="device">
+  <diagram name="Page-1" id="3R7YTnxB3_0424REN6U_">
+    <mxGraphModel dx="1941" dy="1960" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="-64" width="382" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.145;entryY=0;entryDx=0;entryDy=4.35;entryPerimeter=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-4" target="9H3KqyML9HAEjoo8ZjHv-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-4" target="9H3KqyML9HAEjoo8ZjHv-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-4" value="CIBG" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-133.5" y="-36" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-5" value="Vektis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="45.5" y="-36" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-6" value="URA + OrgType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-7" target="9H3KqyML9HAEjoo8ZjHv-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-7" value="Organisatie Wallet" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="-23" y="132" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.855;entryY=0;entryDx=0;entryDy=4.35;entryPerimeter=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-5" target="9H3KqyML9HAEjoo8ZjHv-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="82" y="105" />
+              <mxPoint x="28" y="105" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-9" value="Antwoord Ja/Nee" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="624" y="321" as="sourcePoint" />
+            <mxPoint x="460" y="321" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-10" value="Mitz" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="624" y="282" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-11" value="Vertrouwt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-14" target="9H3KqyML9HAEjoo8ZjHv-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="372" y="-27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-12" value="URA + Type + BSN + UZI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-14" target="9H3KqyML9HAEjoo8ZjHv-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-13" value="Geboortekaart" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-14" target="9H3KqyML9HAEjoo8ZjHv-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="318.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="326" y="327" />
+              <mxPoint x="326" y="327" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-14" value="Bronhouder" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="282" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-15" value="Credential(URA + Type + UZI) + BSN + scope" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" target="9H3KqyML9HAEjoo8ZjHv-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="64" y="293" as="sourcePoint" />
+            <mxPoint x="420" y="293" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-16" value="Raadpleger" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-53" y="282" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-1" target="9H3KqyML9HAEjoo8ZjHv-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-18" value="Organisatie&lt;br&gt;Type" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="95" y="72" width="68" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-19" value="URA Nummer" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="-138" y="67" width="74" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-20" value="UZI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-21" target="9H3KqyML9HAEjoo8ZjHv-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-21" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" vertex="1" parent="1">
+          <mxGeometry x="-241" y="183" width="24.62" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-22" value="UZI&lt;br&gt;Nummer" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="-302" y="40" width="70" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-23" value="Opvragen Geboortekaart" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-25" target="9H3KqyML9HAEjoo8ZjHv-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-24" value="Vrijgeven UZI nummer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9H3KqyML9HAEjoo8ZjHv-25" target="9H3KqyML9HAEjoo8ZjHv-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9H3KqyML9HAEjoo8ZjHv-25" value="Gebruiker" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="-246.38" y="366" width="30" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
